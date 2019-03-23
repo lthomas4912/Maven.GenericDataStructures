@@ -1,5 +1,6 @@
 package Table;
 
+import java.security.Key;
 import java.util.ArrayList;
 
 /**
@@ -10,8 +11,32 @@ import java.util.ArrayList;
  * Void return on `remove`.
  */
 public class Table<K, V> {
-    private ArrayList entries;
+    private ArrayList<Entry> entries;
 
     public Table() {
+        entries = new ArrayList<>();
+    }
+
+    public V get(Key key){
+        for(Entry entry : entries){
+            if(entry.getKey().equals(key)){
+                return (V)entry.getValue();
+            }
+        }
+        return null;
+    }
+    public void put(K key, V value){
+
+        for(Entry entry :)
+            //if they key equals update set
+    }
+
+    public void remove(K key){
+        for(Entry entry: entries){
+            if (entry.key.equals(key)){
+
+
+            }
+        }
     }
 }

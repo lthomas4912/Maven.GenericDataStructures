@@ -7,5 +7,26 @@ import java.util.ArrayList;
  * Think about how nested classes should work with generics.
  */
 public class TableNested<K, V> {
+    private ArrayList<Entry> entries;
+
+
+    public TableNested(){
+        entries = new ArrayList<>();
+    }
+
+
+
+
+ //encap- nothing anybody else will need
+    private class Entry{
+        private K key;
+        private V value;
+
+        public Entry(K key, V value){
+            this.key = key;
+            this.value = value;
+        }
+    }
+
 
 }
