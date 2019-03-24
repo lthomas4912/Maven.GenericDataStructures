@@ -14,7 +14,7 @@ public class Table<K, V> {
     private ArrayList<Entry> entries;
 
     public Table() {
-        entries = new ArrayList<>();
+        this.entries = new ArrayList<>();
     }
 
     public V get(Key key){
@@ -25,17 +25,17 @@ public class Table<K, V> {
         }
         return null;
     }
-    public void put(K key, V value){
 
-        for(Entry entry :)
-            //if they key equals update set
+    public void put(K key, V value){
+        remove(key);
+        entries.add(new Entry(key, value));
     }
 
-    public void remove(K key){
-        for(Entry entry: entries){
-            if (entry.key.equals(key)){
-
-
+    public void remove(K key) {
+        for (Entry entry : entries) {
+            if (entry.getKey().equals(key)){
+                entries.remove(entry);
+                break;
             }
         }
     }

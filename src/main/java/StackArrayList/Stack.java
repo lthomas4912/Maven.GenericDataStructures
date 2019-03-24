@@ -6,33 +6,37 @@ import java.util.ArrayList;
  * Implement Stack<E> by adding the push, pop, and isEmpty functions.  It must pass the prewritten unit tests.
  * If you pop on an empty stack, throw an IndexOutOfBoundsException.
  */
-public class Stack<E>  {
+public class Stack<E> {
 
     private ArrayList<E> elements;
+    private Integer count = 0;
 
 
     public Stack() {
-        elements = new ArrayList<>();
+        this.elements = new ArrayList<>();
     }
 
     public Stack(ArrayList elements) {
         this.elements = elements;
-        Stack<E> stacks = new Stack<>();
     }
 
-    private void push(E nextElements) {
-        elements.add((nextElements));
-
+    public void push(E nextElements) {
+        elements.add(nextElements);
     }
 
-    public E pop() {
-        if (isEmpty()) {
+
+    public ArrayList<E> pop() {
+        if (!elements.isEmpty()) {
+            elements = (ArrayList<E>) elements.get(count);
+            elements.remove(elements);
+            count--;
+        }else {
             throw new IndexOutOfBoundsException("Stack is empty");
-            return elements.remove(elements.set());
         }
-
-        public boolean isEmpty () {
+            return elements;
+        }
+        public boolean isEmpty() {
             return elements.size() == 0;
         }
-    }
+
 }

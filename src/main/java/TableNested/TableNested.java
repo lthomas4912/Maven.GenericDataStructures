@@ -14,11 +14,30 @@ public class TableNested<K, V> {
         entries = new ArrayList<>();
     }
 
+    public V get(K key){
+        for(Entry entry : entries){
+            if(entry.key.equals(key)){
+                return entry.value;
+            }
+        }
+        return null;
+    }
 
+    public void put(K key, V value){
+        remove(key);
+        entries.add(new Entry(key, value));
+    }
 
+    public void remove(K key){
+        for (Entry entry : entries){
+            if(entry.key.equals(key)){
+                entries.remove(entry);
+                break;
+            }
+        }
+    }
 
- //encap- nothing anybody else will need
-    private class Entry{
+     private class Entry{
         private K key;
         private V value;
 

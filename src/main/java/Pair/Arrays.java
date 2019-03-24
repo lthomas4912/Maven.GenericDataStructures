@@ -15,12 +15,24 @@ import static java.util.Collections.min;
  */
 public class Arrays {       //This allows us to use collections
     public static <E extends Comparable> Pair<E> firstLast(ArrayList<E> arrayList) {
-        return null;
+        return new Pair<E>(arrayList.get(0), arrayList.get(arrayList.size()-1));
     }
 
     //Collections.min and get the first
+    public static <E extends Comparable> E min(ArrayList<E> arrayList){
+        Collections.sort(arrayList);
+        return arrayList.get(0);
+    }
+
     //Collections.max and get the last
+    public static <E extends Comparable> E max(ArrayList<E> arrayList){
+        Collections.sort(arrayList);
+        return arrayList.get(arrayList.size() - 1);
+    }
+
+
     public  static <E extends Comparable> Pair<E> minMax(ArrayList<E> arrayList){
-        return new Pair<>(People people = new People();
-        Person person = new Person();
+        return new Pair<>(min(arrayList), max(arrayList));
+
+    }
 }

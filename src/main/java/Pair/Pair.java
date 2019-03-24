@@ -18,5 +18,19 @@ public class Pair<E extends Comparable> {
         this.second = second;
     }
 //getters
+    public E getFirst(){
+        return first;
+    }
+
+    public E getSecond(){
+        return second;
+    }
     //compare methods for max and min using ternary operator
+    public E min(){
+        return first.compareTo(second) < 0 ? first : second;
+    }
+
+    public E max(){
+        return first.compareTo(second) > 0 ? first : second;
+    }
 }
